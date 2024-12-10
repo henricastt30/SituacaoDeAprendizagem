@@ -1,0 +1,215 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    height: 100%;
+    background-color: blue;
+    margin: 0;
+}
+
+#container{
+    height: 100%;
+    background-color: gold;
+}
+
+
+
+#nav-bar{
+    background-color: blueviolet;
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+
+#nav-esquerda{
+    background-color: aliceblue;
+    height: 100%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#logo{
+    height: 86%;
+}
+
+#titulo{
+    font-size: 60px;
+    color: #3fa8a9;
+}
+
+#nav-direita{
+    background-color: aliceblue;
+    height: 100%;
+    width: 75%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+.crud{
+    font-size: 45px;
+    color: black;
+    margin: 11px 0px 0px 0px;
+    font-family: arial;
+    background-color: aliceblue;
+    border: 0;
+    cursor: pointer;
+
+}
+
+#cadastrar{
+    background-color: aqua;
+    height: 90%;
+    width: 100%;
+}
+
+#cad-cima{
+    background-color: chocolate;
+    height: 13%;
+    width: 100%;
+    display: flex;
+
+}
+
+#cad-centro{
+    background-color: blue;
+    height: 74%;
+    width: 100%;
+    display: flex;
+}
+
+#centro-esquerda{
+    background-color: bisque;
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#script{
+    background-color: #ffff;
+    height: 90%;
+    width: 80%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#email{
+    height: 10%;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+}
+
+#password{
+    height: 10%;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#confirmpass{
+    height: 10%;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    
+}
+
+#confirmcad{
+        height: 10%;
+        width: 60%;
+        border-radius: 50px;
+        border: 2px solid #3fa8a9; /* Borda cinza fina */
+        box-shadow: none; /* Remover sombra */
+        outline: none; /* Remover contorno ao focar */
+        padding: 15px; /* Adicionar preenchimento para melhor aparência */
+        background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
+        font-size: 20px; /* Ajustar tamanho da fonte */
+        margin: 5px;
+        color: #ffffff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+}
+
+
+
+
+
+#logop{
+    height: 15%;
+    width: 20%;
+    margin: 10px;
+
+}
+
+#centro-direita{
+    background-color: cadetblue;
+    height: 100%;
+    width: 70%;
+}
+
+
+
+#cad-baixo{
+    background-color: chocolate;
+    height: 13%;
+    width: 100%;
+}
+
+.link{
+    color: blue;
+    cursor: pointer;
+}   
+
+.linha{
+    color: gray;
+    text-decoration: line-through;
+}
+
+#ou{
+    color: gray;
+}
+
+
+
+
+
+
+
