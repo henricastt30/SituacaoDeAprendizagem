@@ -30,7 +30,7 @@ body{
 }
 
 #nav-esquerda{
-    background-color: aliceblue;
+    background-color: #ffffff;
     height: 100%;
     width: 25%;
     display: flex;
@@ -48,7 +48,7 @@ body{
 }
 
 #nav-direita{
-    background-color: aliceblue;
+    background-color: #ffffff;
     height: 100%;
     width: 75%;
     display: flex;
@@ -62,20 +62,21 @@ body{
     color: black;
     margin: 11px 0px 0px 0px;
     font-family: arial;
-    background-color: aliceblue;
+    background-color: #ffffff;
     border: 0;
     cursor: pointer;
 
 }
 
 #cadastrar{
-    background-color: aqua;
+    background-color: #107a7c;
+    background-image: url(backCad.png);
+    background-size: 100%;
     height: 90%;
     width: 100%;
 }
 
 #cad-cima{
-    background-color: chocolate;
     height: 13%;
     width: 100%;
     display: flex;
@@ -83,14 +84,12 @@ body{
 }
 
 #cad-centro{
-    background-color: blue;
     height: 74%;
     width: 100%;
     display: flex;
 }
 
 #centro-esquerda{
-    background-color: bisque;
     height: 100%;
     width: 30%;
     display: flex;
@@ -101,14 +100,16 @@ body{
 #script{
     background-color: #ffff;
     height: 90%;
-    width: 80%;
+    width: 75%;
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+    
 }
 
-#email{
+#user{
     height: 10%;
     width: 60%;
     border-radius: 50px;
@@ -135,7 +136,7 @@ body{
     margin: 5px;
 }
 
-#confirmpass{
+#confirmpassword{
     height: 10%;
     width: 60%;
     border-radius: 50px;
@@ -168,6 +169,26 @@ body{
         
 }
 
+#anonimo{
+    height: 10%;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #7f7f7f; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #7f7f7f; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    margin: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-block-end: 20px;
+
+}
+
 
 
 
@@ -180,7 +201,6 @@ body{
 }
 
 #centro-direita{
-    background-color: cadetblue;
     height: 100%;
     width: 70%;
 }
@@ -188,14 +208,14 @@ body{
 
 
 #cad-baixo{
-    background-color: chocolate;
     height: 13%;
     width: 100%;
 }
 
 .link{
-    color: blue;
+    color: dodgerblue;
     cursor: pointer;
+    font-size: 14px;
 }   
 
 .linha{
@@ -205,7 +225,97 @@ body{
 
 #ou{
     color: gray;
+    margin: 5px;
 }
+
+button:hover{
+    color: #3fa8a9;
+    transition: 0.2s;
+}
+
+#editar{
+    height: 90%;
+    width: 100%;
+    background-color: aqua;
+}
+
+
+#listar{
+    height: 90%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+}
+
+#fundoListar{
+    height: 100%;
+    width: 100%;
+    background-color: #3fa8a9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meioListar{
+    height: 90%;
+    width: 70%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+#esqListar{
+    height: 100%;
+    width: 50%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#esqCima{
+    height: 15%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+}
+
+#esqBaixo{
+    height: 85%;
+    width: 100%;
+    /* background-color: gold; */
+    display: flex;
+    justify-content: center;
+}
+
+#dirListar{
+    height: 100%;
+    width: 50%;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#dirCima{
+    height: 15%;
+    width: 100%;
+    /* background-color: gold; */
+    display: flex;
+    justify-content: center;
+}
+
+#dirBaixo{
+    height: 85%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+}
+
 
 
 

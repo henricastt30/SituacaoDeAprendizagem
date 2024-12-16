@@ -26,9 +26,9 @@
         </div>
 
 
+        
 
-
-        <div id="cadastrar">
+        <div id="cadastrar" style="display: block;">
 
             <div id="cad-cima"></div>
 
@@ -37,15 +37,17 @@
                 <div id="centro-esquerda">
                     <div id="script">
                         <img id="logop" src="logo.png">
-                        <input placeholder="email" id="email" type="text">
+                        <input placeholder="usuário" id="user" type="text">
 
                         <input placeholder="senha" id="password" type="text">
-                        <input placeholder="confirmar senha" id="confirmpass" type="text">
-
-                        <button id="confirmcad">CADASTRAR</button>
-
+                        <input placeholder="confirmar senha" id="confirmpassword" type="text">
+                        
+                        <button onclick="cadastro()" id="confirmcad">CADASTRAR</button>
+                        
                         <label class="link">Já possui uma conta? Faça login!</label>
-                        <label>ou</label>
+                        <label id="ou">ou</label>
+                        <button id="anonimo">Anônimo</button>
+                        
                     </div>
                 </div>
                 <div id="centro-direita"></div>
@@ -53,19 +55,31 @@
             <div id="cad-baixo"></div>
         </div>
 
-        <div id="editar">
-            editar editar editar editar editar editar editar editar editar editar editar editar 
+        <div id="editar" style="display: none;">
+                <div id="editar">
+                editar
+                </div>
         </div>
 
-        <div id="deletar">
+        <div id="deletar" style="display: none;">
             deletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrr
         </div>
 
-        <div id="listar">
-            lista lista lista lista lista lista lista lista lista lista lista lista lista lista lista lista lista lista lista 
+        <div id="listar" style="display: none;">
+            <div id="fundoListar">
+                <div id="meioListar">
+                    <div id="esqListar">
+                        <div id="esqCima">Usuários:</div>
+                        <div id="esqBaixo"></div>
+                    </div>
+                    <div id="dirListar">
+                        <div id="dirCima">Senhas:</div>
+                        <div id="dirBaixo"></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-
-
 
     </div>
 </body>
