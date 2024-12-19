@@ -1,3 +1,12 @@
+@font-face{
+    font-family: Paprika;
+    src: url('Paprika-Regular.ttf');
+}
+
+@font-face {
+    font-family: ZenKaku;
+    src: url(Fontes/ZenKakuGothicAntique-Light.ttf);
+}
 *{
     margin: 0%;
     padding: 0%;
@@ -43,8 +52,9 @@ body{
 }
 
 #titulo{
-    font-size: 60px;
+    font-size: 45px;
     color: #3fa8a9;
+    font-family: 'Paprika';
 }
 
 #nav-direita{
@@ -54,19 +64,40 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    
 }
 
-.crud{
-    font-size: 45px;
+.crud {
+    font-size: 65px;
     color: black;
-    margin: 11px 0px 0px 0px;
+    margin: 0px;
     font-family: arial;
     background-color: #ffffff;
     border: 0;
     cursor: pointer;
-
+    font-family: 'ZenKaku';
+    transform: translateX(0px) scale(0.7);
+    transition: transform 0.3s, color 0.3s, font-weight 0.3s; /* Adicionando transições para suavizar as mudanças */
 }
+
+.crud:hover {
+    color: #3fa8a9;
+    font-weight: 760;
+}
+
+.crud:focus {
+    transform: translateX(7px) scale(1.0);
+    color: #3fa8a9;
+    font-weight: 760;
+    outline: none; /* Remove a borda padrão de foco */
+}
+
+/* Usando uma classe adicional para manter o estilo após o clique */
+.crud.active {
+    transform: translateX(7px) scale(1.0);
+    color: #3fa8a9;
+    font-weight: 760;
+}
+
 
 #cadastrar{
     background-color: #107a7c;
@@ -97,11 +128,48 @@ body{
     align-items: center;
 }
 
+#centro-direita{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+     /* background-color: #e94747;  */
+}
+
+#FraseCad{
+    color: #ffffff;
+}
+
+#cad-baixo{
+    height: 13%;
+    width: 100%;
+    /* background-color: #e94747; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cad-baixoEsquerda{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #3fa8a9; */
+}
+
+#cad-baixoDireita{
+    height: 100%;
+    width: 70%;
+    /* background-color: #7f7f7f; */
+}
+
 #script{
     background-color: #ffff;
-    height: 90%;
-    width: 75%;
-    border-radius: 15px;
+    height: 100%;
+    width: 85%;
+    border-radius: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -110,8 +178,8 @@ body{
 }
 
 #user{
-    height: 10%;
-    width: 60%;
+    height: 11%;
+    width: 62%;
     border-radius: 50px;
     border: 2px solid #3fa8a9; /* Borda cinza fina */
     box-shadow: none; /* Remover sombra */
@@ -123,8 +191,8 @@ body{
 }
 
 #password{
-    height: 10%;
-    width: 60%;
+    height: 11%;
+    width: 62%;
     border-radius: 50px;
     border: 2px solid #3fa8a9; /* Borda cinza fina */
     box-shadow: none; /* Remover sombra */
@@ -137,8 +205,8 @@ body{
 }
 
 #confirmpassword{
-    height: 10%;
-    width: 60%;
+    height: 11%;
+    width: 62%;
     border-radius: 50px;
     border: 2px solid #3fa8a9; /* Borda cinza fina */
     box-shadow: none; /* Remover sombra */
@@ -151,27 +219,38 @@ body{
 }
 
 #confirmcad{
-        height: 10%;
-        width: 60%;
-        border-radius: 50px;
-        border: 2px solid #3fa8a9; /* Borda cinza fina */
-        box-shadow: none; /* Remover sombra */
-        outline: none; /* Remover contorno ao focar */
-        padding: 15px; /* Adicionar preenchimento para melhor aparência */
-        background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
-        font-size: 20px; /* Ajustar tamanho da fonte */
-        margin: 5px;
-        color: #ffffff;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
+    height: 12%;
+    width: 62%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    margin: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translateX(0px) scale(1.0);
+    transition: transform 0.3s ease;
+}
+
+#confirmcad:focus{
+    transform:translateX(0px) scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+#confirmcad:hover {
+    transform: translateX(0px) scale(1.1); /* Cresce ao passar o mouse */
+    transition: transform 0.3s ease;
 }
 
 #anonimo{
-    height: 10%;
-    width: 60%;
+    height: 12%;
+    width: 62%;
     border-radius: 50px;
     border: 2px solid #7f7f7f; /* Borda cinza fina */
     box-shadow: none; /* Remover sombra */
@@ -189,20 +268,19 @@ body{
 
 }
 
-
-
-
-
 #logop{
-    height: 15%;
-    width: 20%;
-    margin: 10px;
-
+    height: 17%;
+    width: 22%;
+    margin: 12px;
 }
 
 #centro-direita{
     height: 100%;
     width: 70%;
+}
+
+#FraseCad{
+    font-size: 100px;
 }
 
 
@@ -215,7 +293,7 @@ body{
 .link{
     color: dodgerblue;
     cursor: pointer;
-    font-size: 14px;
+    font-size: 19px;
 }   
 
 .linha{
@@ -228,10 +306,6 @@ body{
     margin: 5px;
 }
 
-button:hover{
-    color: #3fa8a9;
-    transition: 0.2s;
-}
 
 #editar{
     height: 90%;
@@ -239,6 +313,163 @@ button:hover{
     background-color: aqua;
 }
 
+#fundoEditar{
+    height: 100%;
+    width: 100%;
+    background-color: #3fa8a9;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    background: linear-gradient(to right, #537070, #107a7c, #3fa8a9)
+}
+
+#meioEditar{
+    height: 90%;
+    width: 40%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+}
+
+#cimaMeioEditar{
+    height: 20%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    align-self: flex-start;
+    font-size: 50px;
+    align-items: end;
+    justify-content: center;
+    text-align: center;
+}
+
+#centroMeioEditar{
+    height: 20%;
+    width: 100%;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#listarBlockNone{
+    height: 50%;
+    width: 100%;
+    /* background-color: red; */
+}
+
+
+#containerBaixoMeioEditar{
+    height: 80%;
+    width: 100%;
+    background-color: #8fc4c5;
+    border-radius: 30px;
+}
+#abaConfirmEdit{
+    height: 40%;
+    width: 100%;
+    background-color: #8fc4c5;
+    display: flex;
+    align-self: flex-start;
+    font-size: 50px;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: center;
+}
+
+#baixoMeioEditar{
+    height: 100%;
+    width: 100%;
+    background-color: #8fc4c5;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    text-align: center;
+}
+
+#buscarUser{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#buscar{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    margin: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#newUser{
+    height: 60px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#newPass{
+    height: 60px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#confirmEdit{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    margin: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+}
 
 #listar{
     height: 90%;
@@ -254,6 +485,7 @@ button:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+    background: linear-gradient(to right, #3fa8a9, #94b5b6, #a5dbdb)
 }
 
 #meioListar{
@@ -316,10 +548,181 @@ button:hover{
     justify-content: center;
 }
 
+#deletar{
+    height: 90%;
+    width: 100%;
+    background-color: red;
+    display: flex;
+}
+
+#fundoDeletar{
+    height: 100%;
+    width: 100%;
+    background-color: #3fa8a9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meioDeletar{
+    height: 90%;
+    width: 40%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#cimaMeioDeletar{
+    height: 20%;
+    width: 100%;
+    /* background-color: red; */
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#centroMeioDeletar{
+    height: 30%;
+    width: 100%;
+    /* background-color: green; */
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#delUser{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#delPass{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #ffffff; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    text-align: center;
+    margin: 5px;
+}
+
+#confirmDel{
+    height: 70px;
+    width: 60%;
+    border-radius: 50px;
+    border: 2px solid #3fa8a9; /* Borda cinza fina */
+    box-shadow: none; /* Remover sombra */
+    outline: none; /* Remover contorno ao focar */
+    padding: 15px; /* Adicionar preenchimento para melhor aparência */
+    background-color: #3fa8a9; /* Adicionar cor de fundo para contraste */
+    font-size: 20px; /* Ajustar tamanho da fonte */
+    margin: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#baixoMeioDeletar{
+    height: 50%;
+    width: 100%;
+    /* background-color: red; */
+}
+
+#cimaBaixoMeioDeletar{
+    height: 70%;
+    width: 100%;
+    /* background-color: gold; */
+    font-size: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#baixoBaixoMeioDeletar{
+    height: 30%;
+    width: 100%;
+    /* background-color: green; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation-name: trocarFundo;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;  /* Mantém o estilo final da animação */
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+#cancelDelButton{
+    height: 40%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    border: solid 1px gray;
+    margin-right: 2px;
+    transition: all 0.5s ease /*o 'all' é pq altera todos os aspectos, borta, cor... */
+}
+
+#cancelDelButton:hover{
+    cursor: pointer;
+    color: red;
+    font-weight:790;
+    transition: 400ms;
+    border: solid 3px red;
+    transition: all 0.5s ease
+}
+
+#delButton{
+    height: 40%;
+    width: 30%;
+    border-radius: 10px;
+    box-shadow: none;
+    outline: none;
+    background-color: red;
+    border: solid 1px red;
+    color: #ffffff;
+    margin-left: 2px;
+    transition: all 0.5s ease
+    
+}
+
+#delButton:hover{
+    cursor: pointer;
+    color: #a5dbdb;
+    font-weight:790;
+    transition: 400ms;
+    border: solid 3px gray;
+    transition: all 0.5s ease
+}
 
 
 
-
-
-
-
+/* keyframes */
+@keyframes trocarFundo{
+    from{
+        background-color: #ffffff;
+    }
+    to{
+        background-color: #e94747
+    }
+}

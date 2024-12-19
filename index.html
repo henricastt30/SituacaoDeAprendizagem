@@ -39,8 +39,8 @@
                         <img id="logop" src="logo.png">
                         <input placeholder="usuário" id="user" type="text">
 
-                        <input placeholder="senha" id="password" type="text">
-                        <input placeholder="confirmar senha" id="confirmpassword" type="text">
+                        <input placeholder="senha" id="password" type="password">
+                        <input placeholder="confirmar senha" id="confirmpassword" type="password">
                         
                         <button onclick="cadastro()" id="confirmcad">CADASTRAR</button>
                         
@@ -50,19 +50,75 @@
                         
                     </div>
                 </div>
-                <div id="centro-direita"></div>
+                <div id="centro-direita">
+                    <label id="FraseCad" for="centro-direita">
+                        Sua Jornada para o <br>
+                        bem-estar começa<br>
+                        aqui!
+                    </label>
+                </div>
             </div>
-            <div id="cad-baixo"></div>
+            <div id="cad-baixo">
+                <div id="cad-baixoEsquerda">
+                    <div id="RedesSociais">
+                        <div id="IconsRedesSociais">
+                        </div>
+                    </div>
+                </div>
+                <div id="cad-baixoDireita"></div>
+            </div>
         </div>
 
         <div id="editar" style="display: none;">
-                <div id="editar">
-                editar
+                <div id="fundoEditar">
+                    <div id="meioEditar">
+                        <div id="cimaMeioEditar">
+                            Digite o nome do usuário <br>
+                            que você deseja editar.
+                        </div>
+                        <div id="centroMeioEditar">
+                            <input placeholder="Usuário atual" id="buscarUser" type="text">
+                            <button onclick="buscar()" id="buscar">Buscar</button>
+                        </div>
+                        <div id="listarBlockNone" style="display: none;">
+                            <div id="abaConfirmEdit">
+                                Escolha o novo nome <br>
+                                de usuário e senha:
+                            </div>
+                            <div id="containerBaixoMeioEditar">
+                                <div id="baixoMeioEditar">
+                                    <input id="newUser" placeholder="Novo usuário" type="text">
+                                    <input id="newPass" placeholder="Nova senha" type="text">
+                                    <button onclick="edit()" id="confirmEdit">Confirmar</button>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
                 </div>
         </div>
 
         <div id="deletar" style="display: none;">
-            deletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrrdeletarrrrrrrr
+            <div id="fundoDeletar">
+                <div id="meioDeletar">
+                    <div id="cimaMeioDeletar">
+                        Digite o usuário e a senha
+                        que você deseja deletar:
+                    </div>
+                    <div id="centroMeioDeletar">
+                        <input placeholder="Usuário" id="delUser" type="text">
+                        <input placeholder="Senha" id="delPass" type="password">
+                        <button onclick="confirmDel()" id="confirmDel">Confirmar</button>
+                    </div>
+                    <div id="baixoMeioDeletar" style="display: none;">
+                        <div id="cimaBaixoMeioDeletar">
+                            Tem certeza de que deseja excluir sua conta? Esta ação é permanente e todos os dados associados à sua conta serão excluídos de forma irreversível. Se você não tem mais interesse em usar nossos serviços, podemos continuar com a exclusão. Caso mude de ideia, lembre-se de que pode retornar a qualquer momento. Por favor, confirme abaixo se deseja prosseguir com a exclusão. Em caso de exclusão indesejada, contate nosso suporte.
+                        </div>
+                        <div id="baixoBaixoMeioDeletar" >
+                            <button onclick="cancelDel()" id="cancelDelButton">Cancelar</button> <button onclick="del()" id="delButton">Deletar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div id="listar" style="display: none;">
@@ -86,4 +142,6 @@
 
 
 <script src="script.js"></script>
+
+</script>
 </html>

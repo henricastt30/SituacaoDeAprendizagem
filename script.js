@@ -1,10 +1,13 @@
-//Função de trocar de tela:
-
 function esconderTodas(){
     document.getElementById('cadastrar').style.display = 'none'
     document.getElementById('editar').style.display = 'none'
     document.getElementById('deletar').style.display = 'none'
     document.getElementById('listar').style.display = 'none'
+}
+
+function exibirTelaEdit(){
+    document.getElementById('baixoMeioEditar').style.display = 'block'
+    document.getElementById('abaConfirmEdit').style.display = 'block'
 }
 
 function cadastrar(){
@@ -27,111 +30,154 @@ function listar(){
     document.getElementById('listar').style.display = 'block'
 }
 
-    //Inputs do cadastro:
-    let elementoInputUser = document.getElementById('user')
-    let elementoInputPass = document.getElementById('password')
-    let elementoInputCp = document.getElementById('confirmPassword')
+document.querySelectorAll('.crud').forEach(function(label) {
+    label.addEventListener('click', function() {
+        // Remove a classe "active" de todos os botões
+        document.querySelectorAll('.crud').forEach(function(lbl) {
+            lbl.classList.remove('active');
+        });
+        
+        // Adiciona a classe "active" ao botão clicado
+        this.classList.add('active');
+    });
+});
 
-    //Div para mostrar a listagem:
-    let elementoUserListagem = document.getElementById('esqBaixo')
-    let elementoPassListagem = document.getElementById('dirBaixo')
+document.getElementById('confirmcad').addEventListener('click', function() {
+    // Remover o foco do botão após o clique para voltar ao estado normal
+    this.blur();
+});
 
-//Vetores Cadastro
+
+
+
+let elementoInputUser = document.getElementById('user')
+let elementoInputPass = document.getElementById('password')
+let elementoInputCp = document.getElementById('confirmPassword')
+let elementoUserListagem = document.getElementById('esqBaixo')
+let elementoPassListagem = document.getElementById('dirBaixo')
 
 let users = [];
 let passwords = [];
 let confirmPass = [];
 
-    //Variável para armazenar a posição do usuário no vetor;
-    let posUser
 
-    //Varia´vel para armazenar a listagem:
-    let listaDados = ''
-    let listaUsers = ''
-    let listaPass = ''
+let posUser, posPass
+
+let listaDados = ''
+let listaUsers = ''
+let listaPass = ''
+
+let buscarUser, buscarPass
 
 function cadastro(){
+    if (users.indexOf(user.value) != -1) {
+        alert('Nome de usuário já existente, tente outra vez!');
+        return; // isso daq Impede a execução do cadastro se algum campo estiver vazio
+    }
 
-    if(password.value == confirmpassword.value){
-    users.push(user.value)
-    passwords.push(password.value)
-    confirmPass.push(confirmpassword.value)
+    // Verificar se os campos estão vazios, obrigado chatgpt, me ensinou mt
+    if (user.value === '' || password.value === '' || confirmpassword.value === '') {
+      alert('Por favor, preencha todos os campos!');
+        return;
+    }
+    if (password.value === confirmpassword.value) {
+     users.push(user.value);
+     passwords.push(password.value);
+     confirmPass.push(confirmpassword.value);
+     alert('O cadastro foi efetuado com Sucesso!');
+     document.getElementById('password').value = '';
+    document.getElementById('user').value = '';
+    document.getElementById('confirmpassword').value = '';
+    } 
+    else {
+        alert('As senhas não coincidem, tente novamente!');
+    }
+    lista();
+    }
 
-    alert('O cadastro foi efetuado com Sucesso!')
-    console.log(users,passwords)
+    function buscar(){
+        buscarUser = document.getElementById('buscarUser').value
+        posUser = users.indexOf(buscarUser)
+        if(posUser == -1){
+            alert('Usuário não encontrado.')
+        }
+        else{
+            // Exibindo as divs quando o usuário for encontrado
+            document.getElementById('listarBlockNone').style.display = 'block'
+            document.getElementById('containerBaixoMeioEditar').style.display = 'block' // Garantindo que esta div será mostrada
+            document.getElementById('abaConfirmEdit').style.display = 'block'  // Garantindo que esta div será mostrada
+            document.getElementById('newUser').value = users[posUser]
+            document.getElementById('newPass').value = passwords[posUser]
+        }
+    }
+    
+    function edit(){
+        users[posUser] = document.getElementById('newUser').value;
+        passwords[posUser] = document.getElementById('newPass').value;
+        alert('O usuário foi editado com sucesso!')
+        
+        document.getElementById('containerBaixoMeioEditar').style.display = 'none'
+        document.getElementById('abaConfirmEdit').style.display = 'none'
+
+        document.getElementById('buscarUser').value = ''
+        lista()
+    }
+    
+
+function mostrarUsers(){
+    listaUsers = ''
+    for(i=0; i < users.length; i++){
+        listaUsers = listaUsers + users[i] + '<br>'
+    }
+    elementoUserListagem.innerHTML = listaUsers
+}
+    
+function mostrarPasswords(){
+    listaPass = ''
+    for(i=0; i < passwords.length; i++){
+        listaPass = listaPass + passwords[i] + '<br>'
+    }
+    elementoPassListagem.innerHTML = listaPass
+}
+    
+function lista(){
+    mostrarUsers();
+    mostrarPasswords();
+}
+    
+function confirmDel(){
+    buscarUser = document.getElementById('delUser').value
+    buscarPass = document.getElementById('delPass').value
+    posUser = users.indexOf(buscarUser)
+    posPass = passwords.indexOf(buscarPass)
+    if(posUser == -1){
+        alert('Usuário incorreto ou inexistente.')
+    }
+    else if(posPass == -1){
+        alert('Senha inválida!')
     }
     else{
-        alert('As senhas não coincidem, tente novamente!')
+        document.getElementById('baixoMeioDeletar').style.display = 'block'
     }
-    lista()
-    }
+}
 
-    // função para excluir usuário
-    // function deleta{
-
-    //     // Encontra a posição do usuário no vetor e armazena
-    //     posUser = users.indexOf(elementoInputUser.value)
-
-    //     // Exclui o usuário e seus dados dos vetores
-    //     users.splice(posUser, 1)
-    //     passwords.splice(posUser, 1)
-    //     confirmPass.splice(posUser, 1)
-
-    //     alert('Usuário excluído com sucesso!')
-
-    //     //chama a função lista para atualizar a lista
-    //     lista()
-    // }
-
-        //função para editar dados do usuário logado
-        function edita(){
-
-                // encontra a posição do usuário no vetor e armazena
-                posUser = users.indexOf(elementoInputUser.value)
-
-                // o dado 'username' não é possível alterar pois é o dado chave da conta
-
-                passwords[posUser] = elementoInputPass.value
-
-                alert('Dados Editados!')
-
-                // chama a função lista para atualizar a lista
-                lista()
-        }
-
-    // Função para montar listagem e mostrar na div de lista
-
-
-    function mostrarUsers(){
-        // Resetar a lista antes de montar ela atualizada novamente
-        listaUsers = ''
-
-        // Loop para percorrer os vetores
-        for(i=0; i < users.length; i++){
-    
-        // Monta a lista pegando os dados dos vetores em cada posição e salva em uma string
-            listaUsers = listaUsers + users[i] + '<br>'
-    
-        }
+    function cancelDel(){
+        document.getElementById('baixoMeioDeletar').style.display = 'none'
+        document.getElementById('delUser').value = "";
+        document.getElementById('delPass').value = "";
         
-        //Mostra a listagem na div de lista
-        elementoUserListagem.innerHTML = listaUsers
-    }
-    
-    function mostrarPasswords(){
-        // Resetar a lista antes de montar ela atualizada novamente
-        listaPass = ''
-        for(i=0; i < passwords.length; i++){
-            listaPass = listaPass + passwords[i] + '<br>'
-        }
-    
-        elementoPassListagem.innerHTML = listaPass
     }
 
-    function lista(){
-        mostrarUsers()
-        mostrarPasswords()
-    }
-    
-
-    
+function del(){
+    buscarUser = document.getElementById('delUser').value
+    buscarPass = document.getElementById('delPass').value
+    posUser = users.indexOf(buscarUser)
+    posPass = passwords.indexOf(buscarPass)
+    users.splice(posUser,1)
+    passwords.splice(posPass,1)
+    lista()
+    alert('Seu cadastro foi excluido com sucesso!')
+    document.getElementById('baixoMeioDeletar').style.display = 'none'
+    document.getElementById('delUser').value = "";
+    document.getElementById('delPass').value = '';
+}
